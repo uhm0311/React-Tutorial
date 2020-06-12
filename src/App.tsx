@@ -2,13 +2,21 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-class App extends React.Component {
+type Hello = {
+	name: string
+}
+
+class App extends React.Component<Hello> {
+	constructor(props: Hello) {
+		super(props);
+	}
+
 	render() {
 		return (
 			<div className="App">
 				<header className="App-header">
 					<p>
-						Hello world!
+						Hello {this.props.name}!
 					</p>
 					<a
 						className="App-link"
