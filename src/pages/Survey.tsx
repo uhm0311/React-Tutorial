@@ -13,12 +13,7 @@ class Survey extends Component<RouteComponentProps, {[key: number]: number}> {
             temp[i] = 0;
         }
 
-        this.state = temp;
-
-        this.handleChange = this.handleChange.bind(this);
-        this.handleClick = this.handleClick.bind(this);
-
-        
+        this.state = temp;    
     }
 
     handleChange(e: ChangeEvent<HTMLInputElement>) {
@@ -79,7 +74,7 @@ class Survey extends Component<RouteComponentProps, {[key: number]: number}> {
                                                 id={id}
                                                 value={value}
                                                 checked={this.state[question] === answer}
-                                                onChange={this.handleChange}
+                                                onChange={e => this.handleChange(e)}
                                             />
                                             <label htmlFor={id}>답변 {question}-{answer}</label>
                                         </Fragment>
@@ -91,7 +86,7 @@ class Survey extends Component<RouteComponentProps, {[key: number]: number}> {
                     );
                 })}
             </div>
-            <input type="button" value="제출" onClick={this.handleClick}/>
+            <input type="button" value="제출" onClick={e => this.handleClick(e)}/>
         </div>
     );
 }
