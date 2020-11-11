@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import Survey from '../pages/Survey';
 import Result from '../pages/Result';
 

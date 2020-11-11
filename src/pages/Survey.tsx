@@ -1,5 +1,5 @@
 import React, {Component, ChangeEvent, Fragment} from 'react';
-import { RouteComponentProps, useHistory } from 'react-router-dom';
+import { RouteComponentProps } from 'react-router-dom';
 
 class Survey extends Component<RouteComponentProps, {[key: number]: number}> {
     questions: number[] = [1, 2, 3, 4];
@@ -37,7 +37,7 @@ class Survey extends Component<RouteComponentProps, {[key: number]: number}> {
                 alert('모든 항목을 완료해 주세요.');
                 return;
             } else {
-                if (query.length == 0) {
+                if (query.length === 0) {
                     query += '?';
                 } else {
                     query += '&';
